@@ -1,0 +1,112 @@
+﻿<Page x:Class="ItalianPizzaHouse.View.EditProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPizzaHouse.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditProductPage">
+
+    <Grid Background="#FFEFE1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   FontFamily="{StaticResource Alice}" 
+                   FontSize="30" 
+                   Foreground="#755C48" 
+                   Margin="20 20 20 20" 
+                   HorizontalAlignment="Center">
+            Редактирование продукта
+        </TextBlock>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Название продукта:"
+                       VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
+            <TextBox Grid.Row="0" Grid.Column="1"
+                     x:Name="ProductNameTextBox" Margin="0, 0, 10, 0"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Категория:"
+                       VerticalAlignment="Center" Margin="0, 10, 10, 0"/>
+            <ComboBox Grid.Row="1" Grid.Column="1"
+                      x:Name="CategoryComboBox"
+                      DisplayMemberPath="NameCategories" Margin="0, 10, 10, 0"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Цена:"
+                       VerticalAlignment="Center" Margin="0, 10, 10, 0"/>
+            <TextBox Grid.Row="2" Grid.Column="1"
+                     x:Name="PriceTextBox" Margin="0, 10, 10, 0"/>
+
+            <CheckBox Grid.Row="3" Grid.Column="0"
+                      Content="Добавить скидку" Margin="0, 10, 10, 0"/>
+
+            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0, 10, 0, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Text="Скидка:"
+                           VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
+                <TextBox Grid.Column="1"
+                         x:Name="DiscountPriceTextBox" Margin="0, 0, 10, 0"
+                         IsEnabled="{Binding IsDiscount, Mode=OneWay}"/>
+            </Grid>
+
+            <TextBlock Grid.Row="5" Grid.Column="0"
+                       Text="Описание:"
+                       VerticalAlignment="Center" Margin="0, 10, 10, 0"/>
+            <TextBox Grid.Row="5" Grid.Column="1"
+                     Height="50"
+                     x:Name="DescriptionTextBox" Margin="0, 10, 10, 0"/>
+
+            <Button Grid.Row="7" Grid.Column="0" 
+                    Width="140" Height="30"
+                    Content="Сохранить изменения"
+                    Margin="0, 10, 0, 0"
+                    Click="SaveEditProduct_Click"
+                    HorizontalAlignment="Center"/>
+            <Button Grid.Row="7" Grid.Column="1" 
+                    Width="140" Height="30"
+                    Content="Удалить продукт"
+                    Margin="0, 10, 0, 0"
+                    Click="DeleteProduct_Click"
+                    HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" 
+                       FontSize="18"
+                       FontWeight="Bold" 
+                       Margin="0, 10, 0, 0"
+                       Text="{Binding IdProducts, StringFormat=ID: {0}}"/>
+        </Grid>
+    </Grid>
+</Page>

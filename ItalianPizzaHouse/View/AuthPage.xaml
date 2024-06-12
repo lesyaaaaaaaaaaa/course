@@ -1,0 +1,27 @@
+﻿<Page x:Class="ItalianPizzaHouse.View.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPizzaHouse.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="AuthPage">
+
+    <Grid Background="#FFEFE1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="..\Assets\Img\Фото пиццы для окна авторизации.jpg" Grid.Column="0" HorizontalAlignment="Right"/>
+        <StackPanel  Grid.Column="1" Width="500" Background="#EBC6A5" HorizontalAlignment="Left">
+            <Image Source="..\Assets\Img\Логотип.png" Height="226" Width="510"/>
+            <TextBlock Padding="55 0 0 0" FontSize="20" FontFamily="{StaticResource Podkova}" Foreground="#755C48" Margin="0 50 0 0">ЛОГИН</TextBlock>
+            <TextBox x:Name="LoginTextBox" Width="400" Height="50" Background="#FFEFE1" Margin="0 0 0 40" FontSize="30" Foreground="#9C7F67" FontFamily="{StaticResource Podkova}"></TextBox>
+            <TextBlock Padding="55 0 0 0" FontSize="20" FontFamily="{StaticResource Podkova}" Foreground="#755C48">ПАРОЛЬ</TextBlock>
+            <PasswordBox x:Name="PasswordTextBox" Width="400" Height="50" Background="#FFEFE1" FontSize="30" Foreground="#9C7F67"  FontFamily="{StaticResource Podkova}"></PasswordBox>
+            <Button Width="200" Height="50" Margin="0 50 0 0" FontSize="20" Click="EnterButton_Click">ВОЙТИ</Button>
+            <Button Width="200" Height="50" Margin="0 20 0 0" FontSize="20" Click="BackButton_Click">НАЗАД</Button>
+        </StackPanel>
+    </Grid>
+</Page>
